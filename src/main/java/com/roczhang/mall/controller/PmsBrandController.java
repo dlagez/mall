@@ -13,7 +13,7 @@ import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
-import java.util.concurrent.locks.ReadWriteLock;
+
 
 /**
  * 品牌管理Controller
@@ -28,6 +28,7 @@ public class PmsBrandController {
     private static final Logger log = LoggerFactory.getLogger(PmsBrandController.class);
 
     @RequestMapping(value = "listAll", method = RequestMethod.GET)
+    @ResponseBody
     public CommonResult<List<PmsBrand>> getBrandList() {
         return CommonResult.success(demoService.listAllBrand());
     }

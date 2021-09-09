@@ -4,14 +4,12 @@ import com.roczhang.mall.mbg.model.PmsBrand;
 import com.roczhang.mall.mbg.model.PmsBrandExample;
 import java.util.List;
 import org.apache.ibatis.annotations.Param;
+import org.springframework.context.annotation.Configuration;
 import org.springframework.stereotype.Service;
 
-/**
- * mbg 自动生成的mapper
- */
 @Service
 public interface PmsBrandMapper {
-    int countByExample(PmsBrandExample example);
+    long countByExample(PmsBrandExample example);
 
     int deleteByExample(PmsBrandExample example);
 

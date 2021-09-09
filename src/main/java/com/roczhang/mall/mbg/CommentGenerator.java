@@ -23,15 +23,16 @@ public class CommentGenerator extends DefaultCommentGenerator {
         super.addConfigurationProperties(properties);
         this.addRemarkComments = StringUtility.isTrue(properties.getProperty("addRemarkComments"));
     }
-//
-//    @Override
-//    public void addFieldComment(Field field, IntrospectedTable introspectedTable,
-//                                IntrospectedColumn introspectedColumn) {
-//        String remarks = introspectedColumn.getRemarks();
-//        if (addRemarkComments && StringUtility.stringHasValue(remarks)) {
-//            addFieldComment(field, remarks);
-//        }
-//    }
+
+    @Override
+    public void addFieldComment(Field field, IntrospectedTable introspectedTable, IntrospectedColumn introspectedColumn) {
+        String remarks = introspectedColumn.getRemarks();
+        // 根据参数和备注信息判断是否添加备注信息
+        if (addRemarkComments && StringUtility.stringHasValue(remarks)) {
+            addFieldJavaDoc(field, remarks);
+        }
+//        super.addFieldComment(field, introspectedTable, introspectedColumn);
+    }
 
     private void addFieldJavaDoc(Field field, String remarks) {
         field.addJavaDocLine("/**");
