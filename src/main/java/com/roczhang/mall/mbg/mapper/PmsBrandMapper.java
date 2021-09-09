@@ -4,10 +4,7 @@ import com.roczhang.mall.mbg.model.PmsBrand;
 import com.roczhang.mall.mbg.model.PmsBrandExample;
 import java.util.List;
 import org.apache.ibatis.annotations.Param;
-import org.springframework.context.annotation.Configuration;
-import org.springframework.stereotype.Service;
 
-@Service
 public interface PmsBrandMapper {
     long countByExample(PmsBrandExample example);
 
