@@ -101,6 +101,8 @@ public class UmsAdminServiceImpl implements UmsAdminService {
                 throw new BadCredentialsException("密码不正确");
             }
             UsernamePasswordAuthenticationToken authentication = new UsernamePasswordAuthenticationToken(userDetails, null, userDetails.getAuthorities());
+            // SecurityContext 作用：保留系统当前的安全上下文细节，其中就包括当前使用系统的用户信息。
+            // 获取登录用户的信息
             SecurityContextHolder.getContext().setAuthentication(authentication);
             token = jwtTokenUtil.generateToken(userDetails);
         } catch (AuthenticationException e) {
