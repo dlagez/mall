@@ -10,10 +10,16 @@ import java.io.Serializable;
 import java.math.BigDecimal;
 import java.util.List;
 
+/**
+ * 这里没有写type是因为type将来要被废除，type的默认类型为_doc
+ * 就是不用管type，es会给默认值。
+ */
+// @Document指定了es搜索引擎的索引和类型，es里面的索引就是mysql里面的表。
 @Document(indexName = "pms", shards = 1, replicas = 0)
 public class EsProduct implements Serializable {
     private static final long serialVersionUID = -1L;
 
+    // @Field 指定了字段的类型，比如mysql的varchar类型。
     @Id
     private Long id;
     @Field(type = FieldType.Keyword)
