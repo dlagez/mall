@@ -47,3 +47,10 @@
 ### mall整合Elasticsearch实现商品搜索
 
 Elasticsearch以前了解过，但是没有具体学习过，这几天在学习Elasticsearch基本使用 2021-09-16。
+
+### mall整合了日志记录
+
+完成这个功能时记录了一些类的使用：
+ThreadLocal：https://blog.csdn.net/zphuangtang/article/details/120421790
+RequestContextHolder：https://blog.csdn.net/zphuangtang/article/details/120421823
+这个功能并不是很难，使用到了传统的servlet技术，大多数操作都是HttpServletRequest request完成。
